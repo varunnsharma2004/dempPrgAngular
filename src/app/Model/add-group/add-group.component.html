@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row  p-2">
+<div class="col-md-12 mt-3 text-center">
+    <h4>Create Group</h4>
+    <hr>
+</div>
+        <div class="col-md-8 mt-3">
+            
+            <input type="text" name="" id="" class="form-control" placeholder="Enter Your Group Name"[(ngModel)]='GroupName' #groupNameInput="ngModel">
+            <span *ngIf="groupNameInput.valid && groupNameInput.touched" style="font-size: 10px;color: red;">Enter Group Name </span>
+        </div>
+        <div class="col-md-4 mt-3">
+            <button class="btn btn-sm btn-primary" (click)="addGroup(groupNameInput)" >Add Group</button>
+        </div>
+    </div>
+</div>

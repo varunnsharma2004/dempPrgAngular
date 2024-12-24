@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+background-color: #b3b5c0;}
+:root {
+    --primary-color: #3f51b5;  
+    --accent-color: #e91e63;  
+    --warn-color: #acb6f4;  
+  }
+  
+  .mat-toolbar {
+    background-color: var(--primary-color) !important;
+    color: white;
+  }
+  
+  .mat-button {
+    color: white;
+  }
+  
+  .mat-button:hover {
+    background-color: var(--accent-color);
+  }
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure this is high enough */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup2 {
+  width: 35%;
+  background-color: white;
+  padding: 20px;
+  /* margin-top: 2%; */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  z-index: 1001; /* Higher than .overlay */
+}
+@media only screen and (max-width : 600px){
+  .popup2 {
+      width: 75%;
+      background-color: white;
+      padding: 20px;
+      /* margin-top: 2%; */
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+      z-index: 1001; 
+  }
+}
+hr{
+  border-color: black;
+}

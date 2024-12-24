@@ -1,0 +1,99 @@
+<mat-toolbar class="" color="primary">
+  <span class="head">Task Managment</span>
+  <a style="margin-left: 2%;" mat-button (click)="openModal()">Create New Task Book</a>
+
+
+</mat-toolbar>
+
+<div class="card ">
+ 
+  
+  <div class="row">
+    <div class="col-md-12 p-1">
+      <div class="row">
+        <div class="col-md-2 mt-2">
+          <h4>Taks List</h4>
+        </div>
+        
+    </div>
+
+    <div class="col-md-12 mt-2 btm-br">
+    </div>
+  </div>
+  <div class="row mt-5 scroll">
+      <div class="col-md-8" style="border-right: 2px solid;">
+      
+        @if (seeds==0) {  <div class="row">
+         
+            <div class="col-md-12 text-center p-5">
+              <img src="../../../assets/image/NOData.jpg" width="40%" alt="">
+            </div>
+            
+        </div>
+      }
+      @else{
+        <div class="row">
+        <div class="col-md-6 mt-3" *ngFor="let data of seeds;let i=index">
+          <div class="crd" [ngClass]="data.Status=='In-Progress'? 'inprogrss'
+          :data.Status=='Complete'?'complete':data.Status=='Close'?'clos':data.Status=='Reopen'?'reopen':''">
+            <div class="row">
+              <div class="col-md-7 mt-3">
+                <h5>{{data.Title}}
+                  <p>&nbsp;Task Id : <span>{{data.Task_id}}</span></p>
+                </h5>
+              </div>
+              <div class="col-md-5 mt-3">
+                <span class="status" [ngClass]="data.Status=='In-Progress'? 's-inprogrs'
+                :data.Status=='Complete'?'s-complete':data.Status=='s-clos'?'clos':data.Status=='s-reopen'?'reopen':''">{{data.Status}}</span>
+              </div>
+              <div class="col-md-12 mt-3">
+
+                <h6>Group Name: &nbsp; <span>{{data.GroupName}}</span></h6>
+              </div>
+              <div class="col-md-12 mt-3">
+                <h6>Task Status: &nbsp;&nbsp; <span> {{data.Status}}</span>
+                </h6>
+                <h6> Priority : &nbsp;&nbsp; <span>{{data.Priority}}</span></h6>
+              </div>
+              <div class="col-md-12 mt-2">
+                <div class="ds">
+                  {{data.Discription}}
+                </div>
+              </div>
+              <div class="col-md-12 mt-3 text-end">
+                <button class="btn btn-sm btn-success" (click)="updateTask(data)">Update</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+       
+      </div>
+    }
+    </div>
+    <div class="col-md-4 mt-4">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="text-center">Your Group</h4 >
+            <hr>
+        </div>
+
+        <div class="col-md-12 mt-2" *ngFor=" let grp of Groups;let i=index" >
+          <div class="row">
+            <div class="col-md-6">
+              <h5>{{grp}} &nbsp;&nbsp;&nbsp;&nbsp;</h5>
+            </div>
+            <div class="col-md-6"> 
+              <button mat-button (click)="openTaskModal(grp)">Create Task</button>
+               <button mat-button style="color:red"(click)="removeGroup(i)">Delete</button>
+              </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+   
+</div>
+
+  
+</div>

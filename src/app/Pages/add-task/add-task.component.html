@@ -1,0 +1,46 @@
+<div class="container" style="overflow-x: hidden;">
+    <form [formGroup]="AddTask" class="row mt-4">
+        <div class="col-md-12 text-center">
+            <h4>Create Your Task</h4>
+            <hr>
+        </div>
+        <div class="col-md-12    mt-2">
+            <label for="">Group Name*</label>
+            <input type="text" placeholder="Group Name" readonly class="form-control" formControlName="GroupName">
+        </div>
+        <div class="col-md-12    mt-2">
+
+            <label for="">Title*</label>
+            <input type="text" placeholder="Title" class="form-control" formControlName="Title">
+            <span *ngIf="AddTask.controls['Title'].invalid && AddTask.controls['Title'].touched" style="font-size: 10px;color: red;">Enter Title  </span>
+        </div>
+        <div class="col-md-12    mt-2">
+            <label for="">Set priority* </label>
+            <select class="form-select" aria-label="Default select example" formControlName="priority">
+                <option *ngFor="let pr of priority" [value]="pr">{{pr}}</option>
+            </select>
+            <span *ngIf="AddTask.controls['priority'].invalid && AddTask.controls['priority'].touched" style="font-size: 10px;color: red;">Please set priority  </span>
+        </div>
+        <div class="col-md-12    mt-2">
+
+            <label for="">Set Status* </label>
+            <select class="form-select" aria-label="Default select example" formControlName="Status">
+                <option *ngFor="let st of Status" [value]="st">{{st}}</option>
+
+            </select>
+            <span *ngIf="AddTask.controls['Status'].invalid && AddTask.controls['Status'].touched" style="font-size: 10px;color: red;">Please set Status  </span>
+        </div>
+        <div class="col-md-12    mt-2">
+
+            <label for="">Set Description </label>
+            <textarea name="" id="" cols="50" rows="2" class="form-control" placeholder="Description" formControlName="discription"></textarea>
+        </div>
+        <div class="col-md-12 text-end mt-2">
+            @if (!isUpdate) {
+            <button class="btn-sm btn btn-primary" (click)="taskCreate()" [disabled]="AddTask.invalid">Create</button>}
+            @else {
+                <button class="btn-sm btn btn-primary" (click)="UpdateTask()"  [disabled]="AddTask.invalid">Update</button>
+            }
+        </div>
+    </form>
+</div>

@@ -1,0 +1,59 @@
+.head{
+    color: white 
+    ;border-right: 1px solid white;
+    padding: 1%;
+}
+
+a{
+    color: white !important;
+}
+.card{
+       background: #d3dae1;
+    margin: 2%;
+    padding: 2%;
+}
+.btm-br{
+    border-bottom: 1.5px solid black;
+}
+p{
+    font-size: 14px;
+}
+.crd{
+    padding: 2%;
+    border: 1px solid;
+    border-radius: 10px;
+
+}
+.scroll{
+    overflow-y: scroll;
+    height: 600px;
+}
+.inprogrss{
+    background-color: rgba(104, 137, 170, 0.4);
+}
+.complete{
+    background-color: rgb(166, 241, 166,0.40);
+}
+.clos{
+    background-color: rgb(240, 227, 125,0.40);
+}
+.reopen{
+    background-color: rgb(255, 8, 8,0.20);
+}
+.s-inprogrs{
+    background-color: rgba(104, 137, 170);
+}
+.s-complete{
+    background-color: rgb(166, 241, 166 );
+}
+.s-clos{
+    background-color: rgb(240, 227, 125 );
+}
+.s-reopen{
+    background-color: rgb(255, 8, 8 );
+}
+.status{
+    padding: 4%;
+    border-radius: 10px;
+    
+}
