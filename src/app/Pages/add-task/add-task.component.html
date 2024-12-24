@@ -1,7 +1,8 @@
 <div class="container" style="overflow-x: hidden;">
     <form [formGroup]="AddTask" class="row mt-4">
         <div class="col-md-12 text-center">
-            <h4>Create Your Task</h4>
+            <h4 *ngIf="isUpdate" > Update Your Task</h4>
+            <h4 *ngIf="!isUpdate" > Create Your Task</h4>
             <hr>
         </div>
         <div class="col-md-12    mt-2">
